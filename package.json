@@ -1,0 +1,24 @@
+{
+  "name": "pi3_2022",
+  "version": "1.0.0",
+  "description": "Um programa em Javascript para pegar informações referentes a filmes de uma api e montar um dataset com as informações.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andre-Alfredo-Andrade-Cruz/PI3_2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andre-Alfredo-Andrade-Cruz/PI3_2022/issues"
+  },
+  "homepage": "https://github.com/Andre-Alfredo-Andrade-Cruz/PI3_2022#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "xhr2": "^0.2.1"
+  }
+}
