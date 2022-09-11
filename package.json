@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Andre-Alfredo-Andrade-Cruz/PI3_2022#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "xhr2": "^0.2.1"
+    "xhr2": "^0.2.1",
+    "xlsx": "^0.18.5"
   }
 }
