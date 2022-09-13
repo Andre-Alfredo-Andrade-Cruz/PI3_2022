@@ -19,6 +19,22 @@ function(err, data) {
   if (err !== null) {
     console.log('error')
   } else {
-    console.log(data)
+    var fs = require(`fs`);
+    const d = new Date();
+    var aux = "./DataBank/Lista_" + d.getDate() + "_" + (d.getMonth()+1) + "_" + d.getFullYear() + "_" + d.getHours() + "-" + d.getMinutes() + ".txt";
+    fs.writeFile(aux,"",function(err) {
+      if (err) {
+          console.log(err);
+      }
+    });
+    for(var t=0; t < 20;t++){
+      var jsonData = JSON.stringify(data.results[t].id + ";" + data.results[t].original_title + ";" + data.results[t].genre_ids + ";" + data.results[t].popularity + ";" + data.results[t].release_date + ";" + data.results[t].vote_average + ";" + data.results[t].vote_count) + "\n";
+      var auxjson = jsonData.replace(/"/g,"");
+      fs.appendFile(aux, auxjson, function(err) {
+        if (err) {
+            console.log(err);
+        }
+      });
+    }
   }
 });
