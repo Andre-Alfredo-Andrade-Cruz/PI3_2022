@@ -14,7 +14,7 @@ var getJSON = function(url, callback) {
     xhr.send();
 };
 
-getJSON('https://api.themoviedb.org/3/trending/movie/day?api_key=7a38993b4df60f1442205e2906130f25',
+getJSON('https://api.themoviedb.org/3/movie/popular?api_key=7a38993b4df60f1442205e2906130f25&language=en-US&page=1',
 function(err, data) {
   if (err !== null) {
     console.log('error')
@@ -27,14 +27,15 @@ function(err, data) {
           console.log(err);
       }
     });
-    for(var t=0; t < 20;t++){     
-      var jsonData = JSON.stringify(data.results[t] /*+ ";" + data.results[t].original_title + ";" + data.results[t].genre_ids + ";" + data.results[t].popularity + ";" + data.results[t].release_date + ";" + data.results[t].vote_average + ";" + data.results[t].vote_count*/) + "\n";
-      var auxjson = jsonData.replace(/"/g,"");
+    for(t=0; t < 20;t++){     
+      let jsonData = JSON.stringify(data.results[t].id + ";" + data.results[t].original_title + ";" + data.results[t].genre_ids + ";" + data.results[t].popularity + ";" + data.results[t].release_date + ";" + data.results[t].vote_average + ";" + data.results[t].vote_count) + "\n";
+      let auxjson = jsonData.replace(/"/g,"");
       fs.appendFile(aux, auxjson, function(err) {
         if (err) {
             console.log(err);
         }
       });
     }
+
   }
 });
